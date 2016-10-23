@@ -29,7 +29,7 @@ var config = {
       name: appName
     },
     port: process.env.PORT,
-    db: 'mongodb://localhost/src-production'
+    db: 'mongodb://camilobernal:WkU3McgSmjKXSxPcBeXQ0Gzx7HxIGpAfM1Vc6YPdnxHcZE4LpeOfX2dT6WsJeZkUljsyqUYTDSvPWxickOrS6A==@camilobernal.documents.azure.com:10250/?ssl=true'
   }
 };
 

@@ -8,13 +8,13 @@ var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
 
-module.exports = function(app, config) {
+module.exports = function (app, config) {
   var env = process.env.NODE_ENV || 'development';
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
-  
 
-  // app.use(favicon(config.root + '/public/img/favicon.ico'));
+
+  app.use(favicon(config.root + '/public/favicon.ico'));
   app.use(logger('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
@@ -35,9 +35,10 @@ module.exports = function(app, config) {
     err.status = 404;
     next(err);
   });
-  
+
   var errorTemplate = require('marko').load(require.resolve('../app/views/error.marko'));
-  if(app.get('env') === 'development'){
+
+  if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
       res.status(err.status || 500);
       errorTemplate.render({
@@ -50,11 +51,11 @@ module.exports = function(app, config) {
 
   app.use(function (err, req, res, next) {
     res.status(err.status || 500);
-      errorTemplate.render({
-        message: err.message,
-        error: {},
-        title: 'error'
-      }, res);
+    errorTemplate.render({
+      message: err.message,
+      error: {},
+      title: 'error'
+    }, res);
   });
 
 };

@@ -83,5 +83,6 @@ fabric.properties
 # YO Express generator
 node_modules/
 public/components
+.nyc_output
 .sass-cache
 *.marko.js

@@ -1,7 +1,8 @@
 var path = require('path'),
-    rootPath = path.normalize(__dirname + '/..'),
-    env = process.env.NODE_ENV || 'development',
-    appName = "camilobernalnet";
+  rootPath = path.normalize(__dirname + '/..'),
+  env = process.env.NODE_ENV || 'development',
+  appName = "camilobernalnet",
+  azureInsightsInstrumentationKey = "846224f4-ddba-4004-9278-ef8da7fa5f16";
 
 
 var config = {
@@ -11,7 +12,8 @@ var config = {
       name: appName
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/camilobernalnet'
+    azureInsightsKey: azureInsightsInstrumentationKey,
+    db: 'mongodb://localhost/camilobernalhomepage-development'
   },
 
   test: {
@@ -20,7 +22,8 @@ var config = {
       name: appName
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/src-test'
+    azureInsightsKey: azureInsightsInstrumentationKey,
+    db: 'mongodb://localhost/camilobernalhomepage-test'
   },
 
   production: {
@@ -29,6 +32,7 @@ var config = {
       name: appName
     },
     port: process.env.PORT,
+    azureInsightsKey: azureInsightsInstrumentationKey,
     db: 'mongodb://camilobernal:WkU3McgSmjKXSxPcBeXQ0Gzx7HxIGpAfM1Vc6YPdnxHcZE4LpeOfX2dT6WsJeZkUljsyqUYTDSvPWxickOrS6A==@camilobernal.documents.azure.com:10250/?ssl=true'
   }
 };

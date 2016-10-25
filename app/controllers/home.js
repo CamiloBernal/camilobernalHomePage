@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
     if (err) return next(err);
     indexTemplate.render({
       $global: {locals: req.app.locals},
-      title: 'Generator-Express MVC',
+      title: 'Camilo Bernal Home Page... coming soon...',
       articles: articles
     }, res);
   });

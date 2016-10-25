@@ -17,10 +17,10 @@ module.exports = function (grunt) {
         file: 'app.js'
       }
     },
-    less: {
+    sass: {
       dist: {
         files: {
-          'public/css/style.css': 'public/css/style.less'
+          'public/css/style.css': 'public/css/style.scss'
         }
       }
     },
@@ -39,9 +39,9 @@ module.exports = function (grunt) {
       },
       css: {
         files: [
-          'public/css/*.less'
+          'public/css/*.scss'
         ],
-        tasks: ['less'],
+        tasks: ['sass'],
         options: {
           livereload: reloadPort
         }
@@ -75,7 +75,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('default', [
-    'less',
+    'sass',
     'develop',
     'watch'
   ]);

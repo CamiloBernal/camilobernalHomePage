@@ -10,7 +10,8 @@
 
 # THANKS
 
-    <name>
+    © Jane DoeDesign: HTML5 UP For the template (https://html5up.net/identity)
+
 
 # TECHNOLOGY COLOPHON
 

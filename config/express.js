@@ -13,7 +13,6 @@ module.exports = function(app, config) {
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
 
-
   app.use(favicon(config.root + '/public/favicon.ico'));
   app.use(logger('dev'));
   app.use(bodyParser.json());
@@ -26,19 +25,19 @@ module.exports = function(app, config) {
   app.use(methodOverride());
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
-  controllers.forEach(function (controller) {
+  controllers.forEach(function(controller) {
     require(controller)(app);
   });
 
-  app.use(function (req, res, next) {
+  app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
   });
 
   var errorTemplate = require('marko').load(require.resolve('../app/views/error.marko'));
-  if(app.get('env') === 'development'){
-    app.use(function (err, req, res, next) {
+  if (app.get('env') === 'development') {
+    app.use(function(err, req, res, next) {
       res.status(err.status || 500);
       errorTemplate.render({
         message: err.message,
@@ -48,13 +47,13 @@ module.exports = function(app, config) {
     });
   }
 
-  app.use(function (err, req, res, next) {
+  app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-      errorTemplate.render({
-        message: err.message,
-        error: {},
-        title: 'error'
-      }, res);
+    errorTemplate.render({
+      message: err.message,
+      error: {},
+      title: 'error'
+    }, res);
   });
 
   return app;

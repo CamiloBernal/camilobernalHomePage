@@ -12,7 +12,7 @@
 <html class="no-js lt-ie9" lang="es"> <![endif]
 -->
 <!-- [if gt IE 8]><! -->
-<html class="no-js" lang="es">
+<html class="is-loading" lang="es">
   <!--<![endif]-->
   <head>
     <meta charset="utf-8"/>
@@ -23,6 +23,8 @@
     </title>
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+    <!-- Authority tags -->
     <link rel="author" href="humans.txt"/>
     <!--Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
@@ -32,34 +34,107 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
     <meta name="theme-color" content="#ffffff"/>
     <!--[END] Favicons -->
+    <!-- Normalize Css -->
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/css/main.css"/>
     <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
+    <noscript>
+      <link rel="stylesheet" href="/css/noscript.css"/>
+    </noscript>
   </head>
   <body>
     <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
 <![endif]-->
-    <div class="header-container">
-      <header class="wrapper clearfix">
-        <layout-placeholder name="header"/>
-      </header>
-    </div>
-    <div class="main-container">
-      <div class="main wrapper clearfix">
-        <layout-placeholder name="body"/>
-      </div>
-      <!-- #main -->
-    </div>
-    <!-- #main-container -->
-    <div class="footer-container">
-      <footer class="wrapper">
-        <layout-placeholder name="footer"/>
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Main -->
+      <section id="main">
+        <header>
+          <span class="avatar">
+            <img src="images/avatar.jpg" alt=""/>
+          </span>
+          <h1>Jane Doe</h1>
+          <p>Senior Psychonautics Engineer</p>
+        </header>
+        <!--
+        <hr />
+        <h2>Extra Stuff!</h2>
+        <form method="post" action="#">
+          <div class="field">
+            <input type="text" name="name" id="name" placeholder="Name" />
+          </div>
+          <div class="field">
+            <input type="email" name="email" id="email" placeholder="Email" />
+          </div>
+          <div class="field">
+            <div class="select-wrapper">
+              <select name="department" id="department">
+                <option value="">Department</option>
+                <option value="sales">Sales</option>
+                <option value="tech">Tech Support</option>
+                <option value="null">/dev/null</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
+          </div>
+          <div class="field">
+            <label>But are you a robot?</label>
+            <input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
+            <input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
+          </div>
+          <ul class="actions">
+            <li><a href="#" class="button">Get Started</a></li>
+          </ul>
+        </form>
+        <hr />
+        -->
+        <footer>
+          <ul class="icons">
+            <li>
+              <a href="#" class="fa-twitter">Twitter</a>
+            </li>
+            <li>
+              <a href="#" class="fa-instagram">Instagram</a>
+            </li>
+            <li>
+              <a href="#" class="fa-facebook">Facebook</a>
+            </li>
+          </ul>
+        </footer>
+      </section>
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="copyright">
+          <li>&copy; Jane Doe</li>
+          <li>
+            Design:
+            <a href="http://html5up.net">HTML5 UP</a>
+          </li>
+        </ul>
       </footer>
     </div>
+    <!-- Scripts -->
+    <script>
+      if ('addEventListener' in window) {
+        window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+        document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+      }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>
     <script src="./js/main.js"/>
     <!-- Google Analytics -->

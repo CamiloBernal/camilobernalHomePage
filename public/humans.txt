@@ -1,0 +1,18 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Chef:Camilo Bernal
+    Contact: angelcamilob [at] gmail.com
+    Twitter: @mr_prometheus
+    From:Bogotá, Colombia
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, NodeJs, Marko, Atom, Git
+    jQuery, Modernizr
